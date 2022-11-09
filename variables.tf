@@ -1,5 +1,6 @@
 variable "name" {
   default     = "aws-eks-cloudwatch-logs"
+  type        = string
   description = "Name for created resources."
 }
 

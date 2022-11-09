@@ -15,7 +15,7 @@ module "iam_role" {
   oidc_fully_qualified_subjects = ["system:serviceaccount:kube-system:${var.name}"]
 }
 
-resource "aws_iam_policy_attachment" "fargate-logging" {
+resource "aws_iam_policy_attachment" "fargate_logging" {
   count = var.fargate_logging_enabled ? 1 : 0
 
   name       = "eks-fargate-logging policy"

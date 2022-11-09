@@ -1,4 +1,4 @@
-resource "kubernetes_namespace" "aws-observability" {
+resource "kubernetes_namespace" "aws_observability" {
   metadata {
     labels = {
       aws-observability = "enabled"
@@ -11,7 +11,7 @@ resource "kubernetes_config_map" "fargate_log_config" {
   count = var.fargate_logging_enabled ? 1 : 0
   metadata {
     name      = "aws-logging"
-    namespace = "aws-observability"
+    namespace = kubernetes_namespace.aws_observability.metadata[0].name
   }
 
   data = {
