@@ -1,0 +1,34 @@
+cloudWatch:
+  enabled: true
+  match: "*"
+  region: ${aws_region}
+  logGroupName: ${log_group_name}
+  logStreamName:
+  logStreamPrefix: "fluentbit-"
+  logKey:
+  logFormat:
+  logRetentionDays: ${log_retention_days}
+  roleArn:
+  autoCreateGroup: false
+  endpoint:
+  credentialsEndpoint: {}
+
+firehose:
+  enabled: false
+
+kinesis:
+  enabled: false
+
+elasticsearch:
+  enabled: false
+
+serviceAccount:
+  create: true
+  annotations:
+    eks.amazonaws.com/role-arn: ${role_arn}
+  name: ${service_account_name}
+
+tolerations:
+  - key: "application-node"
+    operator: "Exists"
+    effect: "NoSchedule"
