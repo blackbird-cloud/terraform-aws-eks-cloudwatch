@@ -32,3 +32,11 @@ tolerations:
   - key: "application-node"
     operator: "Exists"
     effect: "NoSchedule"
+
+resources:
+  limits:
+    cpu: 250m
+    memory: 512Mi
+  requests:
+    cpu: 50m
+    memory: 250Mi
