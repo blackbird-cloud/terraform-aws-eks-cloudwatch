@@ -6,7 +6,7 @@ resource "helm_release" "aws_cloudwatch_logs" {
 
   cleanup_on_fail = true
 
-  values = [
+  values = concat([
     templatefile("template.yaml",
       {
         role_arn             = module.iam_role.iam_role_arn
@@ -17,6 +17,6 @@ resource "helm_release" "aws_cloudwatch_logs" {
         aws_region           = var.aws_region
       }
     )
-  ]
+  ], var.values)
 }
 

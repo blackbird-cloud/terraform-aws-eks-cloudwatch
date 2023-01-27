@@ -37,3 +37,9 @@ variable "tags" {
   default     = {}
   description = "AWS Provider detault tags"
 }
+
+variable "values" {
+  type        = list(string)
+  description = "Additional values to pass into the AWS EKS Cloudwatch helm chart."
+  default     = []
+}

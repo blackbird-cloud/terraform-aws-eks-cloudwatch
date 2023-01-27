@@ -45,6 +45,7 @@
 | <a name="input_log_retention_days"></a> [log\_retention\_days](#input\_log\_retention\_days) | How many days the logs should be retained. | `number` | `30` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name for created resources. | `string` | `"aws-eks-cloudwatch-logs"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | AWS Provider detault tags | `map(string)` | `{}` | no |
+| <a name="input_values"></a> [values](#input\_values) | Additional values to pass into the AWS EKS Cloudwatch helm chart. | `list(string)` | `[]` | no |
 
 ## Outputs
 
