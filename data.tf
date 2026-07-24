@@ -12,7 +12,7 @@ locals {
 
 module "cloudwatch_log_policy" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
-  version = "~> 4"
+  version = "~> 4.0"
 
   name        = var.name
   path        = "/cloudwatch_log/"

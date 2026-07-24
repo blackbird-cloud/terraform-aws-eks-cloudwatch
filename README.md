@@ -1,3 +1,20 @@
+<!-- BEGIN_TF_DOCS -->
+# Terraform Aws Eks Cloudwatch Module
+Terraform module to deploy CloudWatch agent on EKS
+
+[![blackbird-logo](https://raw.githubusercontent.com/blackbird-cloud/terraform-module-template/main/.config/logo_simple.png)](https://blackbird.cloud)
+
+## Example
+```hcl
+module "eks_cloudwatch" {
+  source  = "blackbird-cloud/eks-cloudwatch/aws"
+  version = "~> 0.1"
+
+  cluster_name = "my-cluster"
+  aws_region   = "eu-central-1"
+}
+```
+
 ## Requirements
 
 | Name | Version |
@@ -14,14 +31,6 @@
 | <a name="provider_aws"></a> [aws](#provider\_aws) | 4.20.1 |
 | <a name="provider_helm"></a> [helm](#provider\_helm) | 2.4.1 |
 | <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.7.1 |
-
-## Modules
-
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_cloudwatch_log_policy"></a> [cloudwatch\_log\_policy](#module\_cloudwatch\_log\_policy) | terraform-aws-modules/iam/aws//modules/iam-policy | ~> 4 |
-| <a name="module_cluster_log_group"></a> [cluster\_log\_group](#module\_cluster\_log\_group) | terraform-aws-modules/cloudwatch/aws//modules/log-group | 3.2.0 |
-| <a name="module_iam_role"></a> [iam\_role](#module\_iam\_role) | terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc | 4.10.1 |
 
 ## Resources
 
@@ -53,3 +62,14 @@
 |------|-------------|
 | <a name="output_cloudwatch_log_group"></a> [cloudwatch\_log\_group](#output\_cloudwatch\_log\_group) | Cloudwatch log group that receives all logs. |
 | <a name="output_iam_role"></a> [iam\_role](#output\_iam\_role) | IAM role used by the helm chart dispatching logs to Cloudwatch. |
+
+## About
+
+We are [Blackbird Cloud](https://blackbird.cloud), Amsterdam based cloud consultancy, and cloud management service provider. We help companies build secure, cost efficient, and scale-able solutions.
+
+Checkout our other :point\_right: [terraform modules](https://registry.terraform.io/namespaces/blackbird-cloud)
+
+## Copyright
+
+Copyright © 2017-2026 [Blackbird Cloud](https://blackbird.cloud)
+<!-- END_TF_DOCS -->
